@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	lines := utils.MustReadlines("src/day01/part1/input.txt")
+	lines := utils.MustReadlines("src/day01/part2/input.txt")
 	res := Do(lines)
 	fmt.Printf("The answer: %d\n", res)
 }
@@ -24,8 +24,17 @@ func Do(lines []string) int {
 	sort.Ints(left)
 	sort.Ints(right)
 	sum := 0
-	for i := range left {
-		sum += utils.Abs(left[i] - right[i])
+	for _, m := range left {
+		occ := 0
+		for _, n := range right {
+			if m == n {
+				occ++
+			}
+			if m < n {
+				break
+			}
+		}
+		sum += occ * m
 	}
 	return sum
 }

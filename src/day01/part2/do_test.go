@@ -5,13 +5,13 @@ import (
 	"testing"
 )
 
-func Test01_1(t *testing.T) {
+func Test01_2(t *testing.T) {
 	lines := utils.MustReadlines("input_test.txt")
 
-	expected := 11
+	expected := 31
 	got := Do(lines)
 
 	if got != expected {
-		t.Errorf("Do day01/part1 | want %d, got %d", expected, got)
+		t.Errorf("Do day01/part2 | want %d, got %d", expected, got)
 	}
 }
