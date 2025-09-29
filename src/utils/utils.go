@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"bufio"
@@ -31,7 +31,7 @@ func MustReadlines(filename string) []string {
 	return lines
 }
 
-func mustAtoi(s string) int {
+func MustAtoi(s string) int {
 	n, err := strconv.Atoi(s)
 	if err != nil {
 		panic(err)
